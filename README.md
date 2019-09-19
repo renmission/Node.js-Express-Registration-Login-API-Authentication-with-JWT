@@ -33,17 +33,17 @@ API also included:
 >
 > module.exports = (req, res, next) => {
 >
->    //GET Auth header value
+>>    //GET Auth header value
 >    const token = req.header('auth-token');
 >    if (!token) return res.status(401).send('Access Denied');
 >
->    // Check if bearer is undefined
+>>      // Check if bearer is undefined
 >    if (typeof token !== 'undefined') {
->        // Split by space
+>>        // Split by space
 >        const bearer = token.split(' ');
->       //GET token by array
+>>       //GET token by array
 >       const bearerToken = bearer[1];
->        // SET the token
+>>        // SET the token
 >        req.token = bearerToken;
 >    }
 >
