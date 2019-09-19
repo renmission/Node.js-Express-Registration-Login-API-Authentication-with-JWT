@@ -34,6 +34,7 @@ API also included:
 > module.exports = (req, res, next) => {
 >
 >>    //GET Auth header value
+>
 >    const token = req.header('auth-token');
 >
 >    if (!token) return res.status(401).send('Access Denied');
