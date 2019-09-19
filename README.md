@@ -35,6 +35,7 @@ API also included:
 >
 >>    //GET Auth header value
 >    const token = req.header('auth-token');
+>
 >    if (!token) return res.status(401).send('Access Denied');
 >
 >>      // Check if bearer is undefined
@@ -49,11 +50,16 @@ API also included:
 >
 >    try {
 >        const verified = jwt.verify(req.token, process.env.SECRET_KEY);
+>
 >        req.user = verified;
+>
 >    } catch (error) {
+>
 >        res.status(400).send('Invalid Token');
+>
 >    }
 >
 >    next();
+>
 > } 
 
